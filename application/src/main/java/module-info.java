@@ -8,4 +8,5 @@ module application {
     requires spring.boot.test;
     requires spring.boot.starter.test;
     requires org.slf4j;
+    requires core;
 }

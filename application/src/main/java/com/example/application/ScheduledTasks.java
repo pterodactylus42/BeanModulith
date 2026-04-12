@@ -1,5 +1,6 @@
 package com.example.application;
 
+import com.example.core.Core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,6 +18,7 @@ public class ScheduledTasks {
 
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
+        log.info("Core says {}", Core.function());
         log.info("The time is {}", dateFormat.format(new Date()));
     }
 }

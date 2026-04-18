@@ -15,15 +15,25 @@ public class Simulator implements Flow.Subscriber<Boolean> {
 
     @Override
     public void onSubscribe(Flow.Subscription subscription) {
-        log.info("com.example.core.Simulator.onSubscribe");
         this.subscription = subscription;
         subscription.request(1);
     }
 
     @Override
     public void onNext(Boolean item) {
-        log.info("com.example.core.Simulator.onNext");
+        if(item) {
+            computePosition();
+        }
         subscription.request(1);
+    }
+
+    private void computePosition() {
+        switch(Vessel.course) {
+            case N -> Navigator.positionY++;
+            case E -> Navigator.positionX++;
+            case S -> Navigator.positionY--;
+            case W -> Navigator.positionX--;
+        }
     }
 
     @Override

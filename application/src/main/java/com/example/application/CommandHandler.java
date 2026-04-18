@@ -1,5 +1,6 @@
 package com.example.application;
 
+import com.example.core.Navigator;
 import com.example.core.Vessel;
 import com.example.shared.Direction;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -41,7 +42,7 @@ public class CommandHandler {
                 System.out.println("Give direction and speed: [N/E/S/W,any integer number] or 'status' for current information or 'exit' to quit...");
                 final String input = scanner.nextLine().trim();
                 if("status".equalsIgnoreCase(input)) {
-                    System.out.println("Vessel speed " + Vessel.speed + " course " + Vessel.course);
+                    System.out.println("Vessel speed " + Vessel.speed + " course " + Vessel.course + " Position x: " + Navigator.positionX + " y : " + Navigator.positionY);
                 } else if ("exit".equalsIgnoreCase(input)) {
                     System.out.println("exit.");
                     System.exit(0);

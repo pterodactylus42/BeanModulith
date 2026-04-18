@@ -34,7 +34,7 @@ public class CommandHandler {
             try {
                 Thread.sleep(500L);
             } catch (final InterruptedException e) {
-                // nichts machen
+                //
             }
             final Scanner scanner = new Scanner(System.in);
             while (true) {

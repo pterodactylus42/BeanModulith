@@ -1,24 +1,23 @@
 package com.example.application;
 
-import com.example.core.Core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 @Component
 public class ScheduledTasks {
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
+    private static final int MILLISECONDS_PER_FRAME = 1000;
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-
-    @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime() {
-        log.info("Core says {}", Core.function());
-        log.info("The time is {}", dateFormat.format(new Date()));
+    @Scheduled(fixedRate = MILLISECONDS_PER_FRAME)
+    public void compute() {
+        // offsets for position
+//        log.info("Speed: {}", Vessel.speed);
+//        log.info("Speed unit: {}", Vessel.speedUnit());
+//        log.info("Course: {}", Vessel.course);
+//        log.info("Course unit: {}", Vessel.courseUnit());
+//        log.info("-----------------------------");
     }
 }

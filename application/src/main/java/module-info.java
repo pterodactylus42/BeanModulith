@@ -9,4 +9,5 @@ module application {
     requires spring.boot.starter.test;
     requires org.slf4j;
     requires core;
+    requires shared;
 }

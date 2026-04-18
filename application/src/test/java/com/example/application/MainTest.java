@@ -14,8 +14,7 @@ public class MainTest {
     private ScheduledTasks tasks;
 
     @Test
-    public void contextLoads() {
-        // Basic integration test that shows the context starts up properly
+    public void shouldLoadContext() {
         assertThat(tasks).isNotNull();
     }
 

@@ -16,9 +16,9 @@ public class ScheduledTasksTest {
     ScheduledTasks tasks;
 
     @Test
-    public void reportCurrentTime() {
+    public void shouldSchedule() {
         await().atMost(Durations.TEN_SECONDS).untilAsserted(() -> {
-            verify(tasks, atLeast(2)).reportCurrentTime();
+            verify(tasks, atLeast(2)).compute();
         });
     }
 }
